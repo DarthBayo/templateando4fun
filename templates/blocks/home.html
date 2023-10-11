@@ -1,11 +1,36 @@
-{{ block "title" . }}
-    <title>Home</title>
+{{ block "Title" . }}
+<title>Home</title>
 {{ end }}
 
 
-{{ block "main" . }}
-    <main>
-        <p>Só testando</p>
-    </main>
+{{ block "Main" . }}
+<main class="bg-violet-600 my-4 p-4">
+    <section>
+        <article id="content-1" class="bg-fuchsia-800 my-6 p-6">
+            <main>
+                <p>No content</p>
+            </main>
+            <button type="button" class="rounded bg-pink-600 p-2" hx-get="/secret-content" hx-trigger="click"
+                hx-target="#content-1">
+                Get the content
+            </button>
+        </article>
+
+        <article id="content-2" class="bg-rose-600 border-4 border-white-600 my-6 p-6">
+            <main>
+                <p>No content, but with borders</p>
+            </main>
+            <button type="button" class="rounded bg-pink-600 p-2" hx-get="/other-content" hx-trigger="click"
+                hx-target="#content-2">
+                Get the content
+            </button>
+        </article>
+    </section>
+</main>
 {{ end }}
 
+{{ block "Footer" . }}
+<footer class="bg-sky-700 my-4 p-4">
+    <p>Footer, but with another color. Say "bye-bye" to creativity</p>
+</footer>
+{{ end }}

@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{ block "title" . }}{{ end }}
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {{ block "Title" . }}
+    <title>Hello world</title>
+    {{ end }}
 </head>
-<body>
-    {{ block "header" . }}{{ end }}
 
-    {{ block "navbar" . }}{{ end }}
+<body class="container mx-auto py-6">
+    {{ block "Header" . }}
+    <header class="bg-rose-400 my-4 p-4">
+        <h1 class="font-mono text-2xl italic font-bold">Presentation!</h1>
+        <h4>But that's it</h4>
+    </header>
+    {{ end }}
 
-    {{ block "main" . }}{{ end }}
+    {{ block "Navbar" . }}
+    <nav class="bg-red-300 my-4 p-4">
+        <p>&#8595; Menu &#8595;</p>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    {{ end }}
 
-    {{ block "sidebar" . }}{{ end }}
+    {{ block "Main" . }}
+    <main class="bg-orange-500 my-4 p-4">
+        <section>
+            <article>
+                <hgroup>
+                    <h1>Main content</h1>
+                    <h4>Content using Lorem Ipsum</h4>
+                </hgroup>
+                <main>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna
+                    aliqua. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Nunc sed velit
+                    dignissim sodales.
+                </main>
+            </article>
 
-    {{ block "footer" . }}{{ end }}
+            <article>
+                <hgroup>
+                    <h1>Other content</h1>
+                </hgroup>
+                <main>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna
+                    aliqua. Donec enim diam vulputate ut pharetra. Nunc congue nisi vitae suscipit tellus mauris a diam
+                    maecenas.
+                </main>
+            </article>
+        </section>
+    </main>
+    {{ end }}
+
+    {{ block "Footer" . }}
+    <footer class="bg-lime-400 my-4 p-4">
+        <p>Nothing...</p>
+    </footer>
+    {{ end }}
 </body>
+
 </html>
